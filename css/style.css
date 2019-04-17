@@ -121,6 +121,17 @@ header{
 
 
 @media (max-width: 992px){
+    .banner{
+        height: 700px;
+    }
+    .navbar-toggler{
+        cursor: pointer;
+    }
+    .carousel-indicators{
+        position: relative;
+        top:450px;
+    }
+
     .navbar{
         padding:0;
         margin:0;
@@ -145,12 +156,22 @@ header{
     .navbar-nav .nav-link{
       padding-right: 10px;
     }
+    .carousel{
+        text-align: center;
+        margin:0;
+        margin-top:60px !important;
+        padding:20px;
+    }
+    .carousel-item h1{
+        font-size:50px;
+    }
 
     .form-inline{
         position: absolute;
         top: -9999px;
         left: -9999px;
     }
+    
 } 
 
 
@@ -195,10 +216,13 @@ header{
 }
 
 
+/* service */
+
+
 .service{
     background-color: rgba(238, 238, 238, 0.482);
-    height: 630px;
-    margin-bottom: 50px;
+    height: auto;
+    margin-bottom: 100px;
 }
 .service .title{
     margin-top:50px;
@@ -221,9 +245,9 @@ header{
     color: #8f9397;
 }
 .service .row .feature-box{
+    height: 300px;
     background-color: #fff;
     margin-right: 20px;
-    margin-top:30px;
     padding:20px;
     box-shadow: 0px 0px 40px rgba(83, 88, 93, 0.1);
     box-sizing: border-box;
@@ -258,6 +282,26 @@ header{
 }
 
 /* responsive part */
+@media (max-width: 992px){
+    .service{
+        height: auto;
+        margin-bottom:20px;
+    }
+   .service .row .feature-box{
+        margin-left:20px;
+    }  
+    
+}
+
+/* case responsive */
+
+@media (max-width: 992px){
+   .mainbox{
+       margin-top:20px;
+   }
+    
+}
+
 
 
 
@@ -318,6 +362,23 @@ header{
         background-color: white;
         border-color: #796eff;
     }
+
+    /* sign responsive */
+
+    @media (max-width: 992px){
+        
+
+        .sign{
+            height:auto;
+            margin:30px !important;
+        }
+        .sign .btn{
+            padding:10px;
+        }
+    }
+
+
+
 
 
 
@@ -529,6 +590,39 @@ header{
     .team .carousel:hover .control-icon{
         display: block;
     }
+
+    /* team responsive */
+
+    @media (max-width: 992px){
+        .team{
+            height:auto;
+            padding-bottom:30px;
+        }
+      
+       .team .carousel-item h2{
+           font-size: 16px;
+       }
+
+       .team .control-icon .left{
+           position: absolute;
+           top:130px;
+           left:10px;
+       }
+
+       .team .control-icon .right{
+        position: absolute;
+        top:130px;
+        right:10px;
+        }
+
+        .team .control-icon i{
+            font-size: 20px;
+            }
+
+         
+     }
+
+     
 
 
 
