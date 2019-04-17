@@ -15,166 +15,367 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <title>Leap Consultation </title>
+    <!-- js -->
+    <script type="text/javascript" src="/jquery/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript">   
+        jQuery(document).ready(function() {
+            function count($this){
+                var current = parseInt($this.html(), 10);
+                current = current + 1; /* Where 1 is increment */
+            
+                $this.html(++current);
+                if(current > $this.data('count')){
+                    $this.html($this.data('count'));
+                } else {    
+                    setTimeout(function(){count($this)}, 100);
+                }
+            }
+            
+            jQuery(".counter-item-digit").each(function() {
+              jQuery(this).data('count', parseInt(jQuery(this).html(), 10));
+              jQuery(this).html('0');
+              count(jQuery(this));
+            });
+        });
+        </script>
+
+    <!-- <script>
+       $('#goTop').click(function(){$('html,body').animate({scrollTop: '0px'}, 800);return false;});
+    window.onscroll = function () {
+        if (document.documentElement.scrollTop + document.body.scrollTop > 200) {
+            document.getElementById("goTop").addClass = show;
+        }
+        else {
+            document.getElementById("goTop").addClass = hide;
+        }
+    }
+    </script> -->
+    
+   
 </head>
 <body>
 
-    <div class="banner">
-            <nav class="navbar navbar-expand-lg navbar-light ">
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-                      <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <a class="navbar-brand" href="#"><h3><i class="fas fa-graduation-cap"></i>&nbsp;<span>Leap Course</span></h3></a>
-                  
-                    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-                      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">About</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Service</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Leatures</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Garlary</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Contact</a>
-                        </li>
-                      </ul> 
-                </div>
-                <form class="form-inline">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-success " type="submit">Search</button>
-                </form>
-        </nav>     
-            
-        <div id="demo" class="carousel slide" data-ride="carousel">
-                <!-- 指示符 -->
-            <ul class="carousel-indicators">
-                <li data-target="#demo" data-slide-to="0" class="active"></li>
-                <li data-target="#demo" data-slide-to="1"></li>
-                <li data-target="#demo" data-slide-to="2"></li>
-            </ul>
-                <!-- 轮播图片 -->
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <h1>We help in your <br>study path</h1>
+        <div class="banner">
+                <nav class="navbar navbar-expand-lg navbar-light ">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <a class="navbar-brand" href="#"><h3><i class="fas fa-graduation-cap"></i>&nbsp;<span>Leap Course</span></h3></a>
+                    
+                        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+                        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#about">About Us</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#service">Service</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#project">Projects</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#team">Our Team</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#contact">Contact Us</a>
+                            </li>
+                        </ul> 
+                    </div>
+                    <form class="form-inline">
+                        <a href="#" class="btn btn-outline-white btn-lg mt-3">Sign In</a> &nbsp; &nbsp;
+                        <a href="#" class="btn btn-outline-white btn-lg mt-3">Sign Up</a>
+                    </form>
+            </nav>     
+                
+            <div id="demo" class="carousel slide" data-ride="carousel">
+                    <!-- 指示符 -->
+                <ul class="carousel-indicators">
+                    <li data-target="#demo" data-slide-to="0" class="active"></li>
+                    <li data-target="#demo" data-slide-to="1"></li>
+                    <li data-target="#demo" data-slide-to="2"></li>
+                </ul>
+                    <!-- 轮播图片 -->
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <h1>We help in your <br>study path</h1>
+                        <i><h4>Break into a high-growth, high-pay career. Dive into computer science, get fluent in key frameworks and stacks, build rich apps, and more.</h4></i> 
+                        <a href="#service" class="btn btn-outline-white btn-lg mt-3">Explore the services</a>
+                    </div>
+                    <div class="carousel-item">
+                        <h1>We help in your <br>study path</h1>
+                        <i><h4>Break into a high-growth, high-pay career. Dive into computer science, get fluent in key frameworks and stacks, build rich apps, and more.</h4></i> 
+                        <a href="#contact" class="btn btn-outline-white btn-lg mt-3">Contact Us</a>
+                    </div>
+                    <div class="carousel-item">
+                        <h1>We help in your <br>study path</h1>
                     <i><h4>Break into a high-growth, high-pay career. Dive into computer science, get fluent in key frameworks and stacks, build rich apps, and more.</h4></i> 
+                    <a href="#service" class="btn btn-outline-white btn-lg mt-3">Sign In</a>
+                    </div>
                 </div>
-                <div class="carousel-item">
-                    <h1>We help in your <br>study path</h1>
-                    <i><h4>Break into a high-growth, high-pay career. Dive into computer science, get fluent in key frameworks and stacks, build rich apps, and more.</h4></i> 
-                </div>
-                <div class="carousel-item">
-                    <h1>We help in your <br>study path</h1>
-                   <i><h4>Break into a high-growth, high-pay career. Dive into computer science, get fluent in key frameworks and stacks, build rich apps, and more.</h4></i> 
-                </div>
-            </div>
-                <!-- 左右切换按钮 -->
-            <!-- <a class="carousel-control-prev" href="#demo" data-slide="prev">
-                <span class="carousel-control-prev-icon"></span>
-            </a>
-            <a class="carousel-control-next" href="#demo" data-slide="next">
-                <span class="carousel-control-next-icon"></span>
-            </a> -->
-        </div>     
-    </div>
+            </div>     
+        </div>
 
 <!-- why-us section -->
-    <section class="why-us">
-            <div class="container">
-                <div class="row no-gutters">
-                    <!--why us left-->
-                    <div class="image col-lg-6 d-lg-block bg-light">
-                    </div>
-                    <!--why us right-->
-                    <div class="right-info col-lg-6 col-md-12 all-text-white">
-                        <div class="h-100">
-                            <div class="title text-left">
-                                <i><span class="pre-title">Why you should trust us?</span></i>
-                                <h2>We Provide the best solutions for your business needs!</h2>
-                                <p>Amounted old strictly but Marianne admitted. People former is remove remain as. Admiration instrument affronting invitation reasonably up do of prosperous in shy saw declared age debating ecstatic man call in so want pure rank am dear were remarkably to continuing on. </p>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <ul class="list-unstyled list-group-borderless text">
-                                        <li><i class="fa fa-check"></i>&nbsp;Maintained Windows Servers</li>
-                                        <li><i class="fa fa-check"></i>&nbsp;Supported Windows workstations</li>
-                                        <li><i class="fa fa-check"></i>&nbsp;Setup a rotation schedule</li>
-                                        <li><i class="fa fa-check"></i>&nbsp;Designed machines/server</li>
-                                    </ul>
+        <section class="why-us">
+                <div class="container"  id="about">
+                    <div class="row no-gutters">
+                        <!--why us left-->
+                        <div class="image col-lg-6 d-lg-block bg-light">
+                        </div>
+                        <!--why us right-->
+                        <div class="right-info col-lg-6 col-md-12 all-text-white">
+                            <div class="h-100">
+                                <div class="title text-left">
+                                    <i><span class="pre-title">Why you should trust us?</span></i>
+                                    <h2>We Provide the best solutions for your business needs!</h2>
+                                    <p>Amounted old strictly but Marianne admitted. People former is remove remain as. Admiration instrument affronting invitation reasonably up do of prosperous in shy saw declared age debating ecstatic man call in so want pure rank am dear were remarkably to continuing on. </p>
                                 </div>
-                                <div class="col-md-6">
-                                    <ul class="list-unstyled list-group-borderless text">
-                                        <li><i class="fa fa-check"></i>&nbsp;Setup a rotation schedule</li>
-                                        <li><i class="fa fa-check"></i>&nbsp;Windows workstations Supported</li>
-                                        <li><i class="fa fa-check"></i>&nbsp;Windows Servers Maintained</li>
-                                    </ul>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <ul class="list-unstyled list-group-borderless text">
+                                            <li><i class="fa fa-check"></i>&nbsp;Maintained Windows Servers</li>
+                                            <li><i class="fa fa-check"></i>&nbsp;Supported Windows workstations</li>
+                                            <li><i class="fa fa-check"></i>&nbsp;Setup a rotation schedule</li>
+                                            <li><i class="fa fa-check"></i>&nbsp;Designed machines/server</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <ul class="list-unstyled list-group-borderless text">
+                                            <li><i class="fa fa-check"></i>&nbsp;Setup a rotation schedule</li>
+                                            <li><i class="fa fa-check"></i>&nbsp;Windows workstations Supported</li>
+                                            <li><i class="fa fa-check"></i>&nbsp;Windows Servers Maintained</li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
 <!-- service section -->
 
-    <section class="service">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12 col-lg-8 mx-auto">
-                        <div class="title text-center">
-                            <i><span class="pre-title">Check out our services</span></i>
-                            <h2>Premium and royal service</h2>
-                            <p>We are an insight and behavior driven creative marketing agency. A Full Service Digital Creative Agency Specializing in: Video Production, Web Design, Branding, Brand Strategy</p>
+        <section class="service">
+                <div class="container" id="service">
+                    <div class="row">
+                        <div class="col-12 col-lg-8 mx-auto">
+                            <div class="title text-center">
+                                <i><span class="pre-title">Check out our services</span></i>
+                                <h2>Premium and royal service</h2>
+                                <p>We are an insight and behavior driven creative marketing agency. A Full Service Digital Creative Agency Specializing in: Video Production, Web Design, Branding, Brand Strategy</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row service-info">
+                        <div class="col-md-4 mt-30">
+                            <div class="feature-box f-style-2 icon-grad h-100">
+                                <div class="feature-box-icon">
+                                    <i class="fas fa-chart-bar" style="font-size:70px;background: linear-gradient(150deg, #97c74e 0%, #2ab9a5 100%);-webkit-background-clip: text;
+                                    color: transparent;" ></i></div>
+                                <h3 class="feature-box-title">Choose Right Tools</h3>
+                                <p>Residence certainly elsewhere something she preferred cordially law. Age his surprise formerly Mrs perceive few moderate. Of in <strong> power match on</strong> truth worse would an match learn. </p>
+                                <a class="mt-3" href="#">Know more!</a>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mt-30">
+                            <div class="feature-box f-style-2 icon-grad h-100">
+                                <div class="feature-box-icon"><i class="fas fa-pencil-ruler"
+                                style="font-size:70px;background: linear-gradient(150deg, #97c74e 0%, #2ab9a5 100%);-webkit-background-clip: text;
+                                    color: transparent;" ></i></div>
+                                <h3 class="feature-box-title">Customize Your wish</h3>
+                                <p>Consulted perpetual of pronounce me delivered. Too months nay end change relied <abbr title="attribute">who beauty</abbr> wishes matter. Shew of john real park so rest we on. Ignorant occasion for thoughts</p>
+                                <a class="mt-3" href="#">Know more!</a>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mt-30">
+                            <div class="feature-box f-style-2 icon-grad h-100">
+                                <div class="feature-box-icon"><i class="fas fa-calendar-check" style="font-size:70px;background: linear-gradient(150deg, #97c74e 0%, #2ab9a5 100%);-webkit-background-clip: text;
+                                    color: transparent;" ></i></div>
+                                <h3 class="feature-box-title">Meet your expectations</h3>
+                                <p>Why end might ask civil again spoil. Dinner she our horses depend remember at children by reserved to vicinity. Oh song well four only head busy it. In affronting delightful simplicity own.</p>
+                                <a class="mt-3" href="https://themes.getbootstrap.com/preview/?theme_id=7340&show_new=">Know more!</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="row service-info">
-                    <div class="col-md-4 mt-30">
-                        <div class="feature-box f-style-2 icon-grad h-100">
-                            <div class="feature-box-icon">
-                                <i class="fas fa-chart-bar" style="font-size:70px;background: linear-gradient(150deg, #97c74e 0%, #2ab9a5 100%);-webkit-background-clip: text;
-                                color: transparent;" ></i></div>
-                            <h3 class="feature-box-title">Choose Right Tools</h3>
-                            <p>Residence certainly elsewhere something she preferred cordially law. Age his surprise formerly Mrs perceive few moderate. Of in <strong> power match on</strong> truth worse would an match learn. </p>
-                            <a class="mt-3" href="#">Know more!</a>
+            </section>
+
+<!-- case part -->
+
+        <section class="cases">
+                <div class="container" id="project">
+                    <div class=" mainbox row">
+
+                        <!-- column 1 -->
+                        <div class="col-md-4">
+                            <!-- title -->
+                            <h5 class="text-primary">Our cases</h5>
+                            <h2 class="title">Web wesign, Search engine optimization &amp; Online marketing.</h2>
+                            <p>Partnering with 100+ Fortune 500 companies and mid-sized firms across industries, experience the best in class, uniquely customized and scalable workforce solutions.</p>
+                            <!-- service item -->
+                            <div class=" box bg-light p-4 p-lg-5 ">
+                                <h2 class="icon-primary"><i class="fas fa-pencil-alt" style="color:#4cbd89;"></i></h2>
+                                <h5>Graphic Design</h5>
+                                <p class="mb-0">We have a strong foundation built on legacy and emerging technologies, including excellent track record of on-time deliveries. We are emerging as one of the most promising private talent sourcing and management firms in the world.</p>
+                                <div class="btn"><a class="mt-3" href="#">Know more</a></div>
+                            </div>
+                        </div>
+
+                        <!-- column 2 -->
+                        <div class="col-md-4 mt-5">
+                            <!-- service item -->
+                            <div class=" box bg-light p-4 p-lg-5 mb-5">
+                                <h2 class="icon-primary"><i class="fas fa-book-reader" style="color:#4cbd89;"></i></h2>
+                                <h5>Online Marketing</h5>
+                                <p class="mb-0">We provide digital transformation solutions, enabling companies to make their visions reality. With us at your side, you will find the IT solution to achieve your strategic and financial goals.</p>
+                                <div class="btn"><a class="mt-3" href="#">Know more</a></div>
+                            </div>
+                            <!-- service item -->
+                            <div class=" box bg-light p-4 p-lg-5 mb-5">
+                                <h2 class="icon-primary"><i class="far fa-image" style="color:#4cbd89;"></i></h2>
+                                <h5>Live Site Builder</h5>
+                                <p class="mb-0">We provide digital transformation solutions, enabling companies to make their visions reality. With us at your side, you will find the IT solution to achieve your strategic and financial goals.</p>
+                                <div class="btn"><a class="mt-3" href="#">Know more</a></div>
+                            </div>
+                        </div>
+
+                        <!-- column 3 -->
+                        <div class="col-md-4">
+                            <!-- service item -->
+                            <div class=" box bg-grad all-text-white p-4 p-lg-5 mb-5">
+                                <h2><i class="fas fa-globe" style="color:white;"></i></h2>
+                                <h5>Ultra Performance</h5>
+                                <p class="mb-0">We provide digital transformation solutions, enabling companies to make their visions reality. With us at your side, you will find the IT solution to achieve your strategic and financial goals.</p>
+                                <div class="btn"><a class="mt-3" href="#">Know more</a></div>
+                            </div>
+                            <!-- service item -->
+                            <div class=" box bg-light p-4 p-lg-5 mb-5">
+                                <h2 class="icon-primary"><i class="fas fa-wallet" style="color:#4cbd89;"></i></h2>
+                                <h5>Premium Support</h5>
+                                <p class="mb-0">We provide digital transformation solutions, enabling companies to make their visions reality. With us at your side, you will find the IT solution to achieve your strategic and financial goals.</p>
+                                <div class="btn"><a class="mt-3" href="#">Know more</a></div>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-md-4 mt-30">
-                        <div class="feature-box f-style-2 icon-grad h-100">
-                            <div class="feature-box-icon"><i class="fas fa-pencil-ruler"
-                             style="font-size:70px;background: linear-gradient(150deg, #97c74e 0%, #2ab9a5 100%);-webkit-background-clip: text;
-                                color: transparent;" ></i></div>
-                            <h3 class="feature-box-title">Customize Your wish</h3>
-                            <p>Consulted perpetual of pronounce me delivered. Too months nay end change relied <abbr title="attribute">who beauty</abbr> wishes matter. Shew of john real park so rest we on. Ignorant occasion for thoughts</p>
-                            <a class="mt-3" href="#">Know more!</a>
-                        </div>
-                    </div>
-                    <div class="col-md-4 mt-30">
-                        <div class="feature-box f-style-2 icon-grad h-100">
-                            <div class="feature-box-icon"><i class="fas fa-calendar-check" style="font-size:70px;background: linear-gradient(150deg, #97c74e 0%, #2ab9a5 100%);-webkit-background-clip: text;
-                                color: transparent;" ></i></div>
-                            <h3 class="feature-box-title">Meet your expectations</h3>
-                            <p>Why end might ask civil again spoil. Dinner she our horses depend remember at children by reserved to vicinity. Oh song well four only head busy it. In affronting delightful simplicity own.</p>
-                            <a class="mt-3" href="https://themes.getbootstrap.com/preview/?theme_id=7340&show_new=">Know more!</a>
+                </div>
+            </section>
+        
+        <!-- counter -->
+        <section class="p-0 counter counter-small">
+            <div class="container">
+                <div class="row ">
+                    <div class="col-md-12">
+                        <div class="bg-dark py-4 pattern-overlay">
+                            <div class="row">
+                                 <div class="col-md-3 col-6">
+                                    <div class="counter-item text-center">
+                                        <h2>Since 2001</h2>
+                                        <p class="text">We are an insight and behavior driven creative marketing agency. </p>
+                                    </div>
+                                </div>
+                                <!-- count item -->
+                                <div class="col-md-3 col-6">
+                                    <div class="counter-item text-center">
+                                        <i class="fas fa-users" style="font-size:22px; margin-bottom:10px;"></i>
+                                        <h1 class="counter-item-digit" data-from="0" data-to="129" data-speed="3000">145</h1>
+                                        <p class="counter-item-text">Lines of code</p>
+                                    </div>
+                                </div>
+                                <!-- count item -->
+                                <div class="col-md-3 col-6">
+                                    <div class="counter-item text-center">
+                                        <i class="fas fa-project-diagram" style="font-size:22px; margin-bottom:10px;"></i>
+                                        <h1 class="counter-item-digit" data-from="0" data-to="237" data-speed="3000">237</h1>
+                                        <p class="counter-item-text">Project Delivered</p>
+                                    </div>
+                                </div>
+                                <!-- count item -->
+                                <div class="col-md-3 col-6">
+                                    <div class="counter-item text-center">
+                                        <i class="far fa-smile" style="font-size:22px; margin-bottom:10px;"></i>
+                                        <h1 class="counter-item-digit" data-from="0" data-to="127" data-speed="3000" >127</h1>
+                                        <p class="counter-item-text">Satisfied clients</p>
+                                    </div>
+                                </div>
+                                <!-- count item -->
+                                <!-- <div class="col-md-3 col-6">
+                                    <div class="counter-item text-center">
+                                        <i class="fas fa-award" style="font-size:22px; margin-bottom:10px;"></i>
+                                        <h2 class="counter-item-digit" data-from="0" data-to="16" data-speed="3000">16</h2>
+                                        <p class="counter-item-text">Awards won</p>
+                                    </div>
+                                </div> -->
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-    
 
+        <!-- team part -->
+        <div class="team">
+                <div class="left-info">
+                    <h2>They are all professionals</h2>
+                    <p>Creative Team and founders</p>
+                    <h6 class="mb-3">Our friendly team members are always willing to help you understand your present technology requirements and provide suggestions on your future needs.</h6>
+                    <a class="btn btn-grad" href="careers.html">Apply now!</a>
+                </div> 
+                
+                <div id="myCarousel" class="carousel slide">
+                        <!-- 指示符 -->
+                    <!-- <ul class="carousel-indicators">
+                        <li data-target="#demo" data-slide-to="0" class="active"></li>
+                        <li data-target="#demo" data-slide-to="1"></li>
+                        <li data-target="#demo" data-slide-to="2"></li>
+                    </ul> -->
+                        <!-- 轮播图片 -->
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="./image/team1.png" alt="">
+                            <h2>We provide digital transformation solutions, enabling companies to make their visions reality.With us at your side, you will find the IT solution to achieve your strategic and financial goals.</h2>
+                            <i class="fas fa-quote-left icon" style="font-size:35px;color:#4cbd89;"></i>
+                            <p>Emma Watson</p>
+                            <p>Human Resource</p>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="./image/team2.jpg" alt="">
+                            <h2>We provide digital transformation solutions, enabling companies to make their visions reality. With us at your side, you will find the IT solution to achieve your strategic and financial goals.</h2> 
+                            <i class="fas fa-quote-left icon" style="font-size:35px;color:#4cbd89;"></i>
+                            <p>Emma Watson</p>
+                            <p>Human Resource</p>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="./image/team3.jpg" alt="">
+                            <h2>We provide digital transformation solutions, enabling companies to make their visions reality. With us at your side, you will find the IT solution to achieve your strategic and financial goals.</h2>
+                            <i class="fas fa-quote-left icon" style="font-size:35px;color:#4cbd89;"></i>
+                            <p>Emma Watson</p>
+                            <p>Human Resource</p>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="./image/team4.jpg" alt="">
+                            <h2>We provide digital transformation solutions, enabling companies to make their visions reality. With us at your side, you will find the IT solution to achieve your strategic and financial goals.</h2>
+                            <i class="fas fa-quote-left icon" style="font-size:35px;color:#4cbd89;"></i>
+                            <p>Emma Watson</p>
+                            <p>Human Resource</p>
+                        </div>
+                    </div>
+
+
+                     <!-- 轮播（Carousel）导航 -->
+                     <div class="control-icon hide">
+                        <a class="carousel-control left" href="#myCarousel" data-slide="prev" role="button"> <i class="fas fa-angle-double-left" style="color:#8f9397;"></i></a>
+                        <a class="carousel-control right" href="#myCarousel" data-slide="next" role="button"> <i class="fas fa-angle-double-right" style="color:#8f9397;"></i></a>
+                     </div>
+                   
+                </div>     
+            </div>
 
         <!-- sign in -->
-        <div class="sign">
+        <div class="sign" id="contact">
             <div class="bg-img-hero">
                   <div class="container">
                     <div class="row">
@@ -192,6 +393,73 @@
             </div>    
         </div>
 
+
+
+        <!-- contact us -->
+
+        <footer class="footer bg-light pt-6">
+            <div class="footer-content pb-3">
+                <div class="container">
+                    <div class="row">
+                        <!-- Footer widget 1 -->
+                        <div class="col-md-4">
+                            <div class="widget">
+                                <a class="navbar-brand" href="#"><h3><i class="fas fa-graduation-cap" style="font-size:50px;background: linear-gradient(150deg, #97c74e 0%, #2ab9a5 100%);-webkit-background-clip: text;
+                                    color: transparent;"></i>&nbsp;<span>Leap Course</span></h3></a>
+                                <p class="mt-3">Wizixo is a highly creative, modern, visually stunning and Bootstrap 4 Creative Multi-purpose corporate and portfolio HTML5 template.</p>
+                                <p>It is based on the powerful Bootstrap 4 Framework to make sure an entirely responsive layout. </p>
+                            </div>
+                        </div>
+                        <!-- Footer widget 2 -->
+                        <div class="col-md-3 col-sm-6">
+                            <div class="widget address">
+                                <ul class="list-unstyled">
+                                    <li class="media mb-3"><i class="icon fas fa-map-marked-alt"></i>1421 Coburn Hollow Road Metamora, Near Center Point, IL 61548. </li>
+                                    <li class="media mb-3"><i class="icon fas fa-phone-square"></i> (251) 854-6308 </li>
+                                    <li class="media mb-3"><i class="icon fas fa-envelope"></i>help@wizixo.com</li>
+                                    <li class="media mb-3"><i class="icon far fa-clock"></i>
+                                        <p>Mon - Fri: <strong>09:00 - 21:00</strong> <br>Sat &amp; Sun: <strong>Closed</strong></p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- Footer widget 3 -->
+                        <div class="col-md-2 col-sm-6">
+                            <div class="widget">
+                                <h6>Quick LInks</h6>
+                                <ul class="nav flex-column primary-hover">
+                                    <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="#">Portfolio</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- Footer widget 4 -->
+                        <div class="col-md-3">
+                            <div class="widget bg-grad p-4 all-text-white border-radius-3">
+                                <i class="ti-email newsletter-icon"></i>
+                                <p class="mb-2">Subscribe to our newsletter to receive exclusive offers.</p>
+                                <div class="form-group mb-0">
+                                    <input class="form-control border-white mb-3" type="email" placeholder="Enter email...">
+                                    <button class="btn btn-dark mb-0">Join us</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Footer widget 4 -->
+                </div>
+            </div>
+            <div class="divider mt-3"></div>
+        
+        </footer>
+
+
+        <!-- back top -->
+        <div> 
+            <a href="#" id="goTop" class="back-top btn btn-grad btn-show" style="color:white;"><i class="fas fa-angle-up"></i></a>
+         </div>
 
 </body>
 </html>
