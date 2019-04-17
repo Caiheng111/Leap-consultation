@@ -63,8 +63,12 @@ header{
     color:white;
     
 }
+.carousel-indicators{
+    position: relative;
+    top:400px;
+}
 .carousel{
-    margin:120px;
+    margin:100px;
     padding: 30px;
 }
 
